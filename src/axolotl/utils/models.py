@@ -1450,6 +1450,7 @@ def load_llama_adapter(model, cfg):
             model,
             cfg.lora_model_dir,
             torch_dtype=torch.float16,
+            offload_folder="."
         )
     else:
         model = get_peft_model(model, peft_config)
@@ -1572,6 +1573,7 @@ def load_lora(model, cfg, inference=False, config_only=False):
             model,
             cfg.lora_model_dir,
             is_trainable=(not inference),
+            offload_folder=".",
             **model_kwargs,
         )
     else:

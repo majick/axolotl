@@ -150,7 +150,7 @@ install_requires, dependency_links, extras_require_build = parse_requirements(
 )
 
 setup(
-    version=get_package_version(),
+    version=get_package_version()+"fuckoff-cuda",
     package_dir={"": "src"},
     packages=find_packages("src"),
     install_requires=install_requires,
